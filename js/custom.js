@@ -98,7 +98,7 @@ function showWelcome() {
         "msgtype": "markdown", // 消息类型，此时固定为markdown
         "markdown": {
           "content": 
-            `**${pos} 小伙伴来访**\n**距离约 <font color=\"info\">${dist}</font> KM**\n**IP：<font color=\"info\">${ip}</font>**\n${posdesc}`,
+            `${pos} 小伙伴来访\n**距离约 <font color=\"info\">${dist}</font> KM**\n**IP：<font color=\"info\">${ip}</font>**\n${posdesc}`,
         }
       };
 
