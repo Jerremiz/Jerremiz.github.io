@@ -12,8 +12,6 @@ $.ajax({
     }
 })
 
-var num = 0;
-
 function getDistance(e1, n1, e2, n2) {
     const R = 6371
     const { sin, cos, asin, PI, hypot } = Math
@@ -30,9 +28,10 @@ function getDistance(e1, n1, e2, n2) {
     return Math.round(r);
 }
 
+let hasExecuted = false;
+
 function showWelcome() {
 
-    num++;
     let dist = getDistance(115.27179, 22.81234, ipLoacation.result.location.lng, ipLoacation.result.location.lat); //这里换成自己的经纬度
     let pos = ipLoacation.result.ad_info.nation + " " + ipLoacation.result.ad_info.province + " " + ipLoacation.result.ad_info.city + " " + ipLoacation.result.ad_info.district;
     let ip = ipLoacation.result.ip;
@@ -86,64 +85,48 @@ function showWelcome() {
     try {
         //自定义文本和需要放的位置
         document.getElementById("welcome-info").innerHTML =
-            `<b><center>--- 🎉 Welcome 🎉 ---</center><center>欢迎 <span style="color:#5ea6e5">${pos}</span> 的小伙伴</center><center>${timeChange}</center><center>您现在距离站长约 <span style="color:#5ea6e5">${dist}</span> 公里</center><center>当前的IP地址为： <span style="color:#5ea6e5">${ip}</span></center><center>${posdesc}</center></b>`;
+            `<b><center>--- 🎉 Welcome 🎉 ---</center><center>欢迎 <span style="color:#5ea6e5">${pos}</span> 的小伙伴</center><center>${timeChange}</center><center>您现在距离站长约 <span style="color:#5ea6e5">${dist}</span> 公里</center><center>${posdesc}</center></b>`; //<center>当前的IP地址为： <span style="color:#5ea6e5">${ip}</span></center>
     } catch (err) {
-        // console.log("Pjax无法获取#welcome-info元素🙄🙄🙄")
+        // console.log("Pjax无法获取#welcome-info元素")
     }
+    if (!hasExecuted) sendMsgToWXWork();//推送
 
-    class WXWork_SMS {
-      // Markdown类型消息
-      send_msg_markdown() {
-        const send_url = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=8023261b-787a-4ae3-994c-cc8148dfd256";
-        const send_data = {
-          "msgtype": "markdown", // 消息类型，此时固定为markdown
-          "markdown": {
-            "content": `${num}\n` + 
-              `欢迎${pos}的小伙伴\n` + 
-              `您现在距离站长约 ${dist} 公里\n` + 
-              `当前的IP地址为： ${ip}\n` + 
-              `${posdesc}`,
-          }
-        };
-    
-        fetch(send_url, {
-          method: 'POST',
-          mode: 'no-cors',
-          cache: 'no-cache',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(send_data)
-        }).then(response => {
-          console.log('Response:', response);
-        }).catch(error => {
-          console.error('Error:', error);
-        });
-      }
+    //企业微信群机器人推送
+    function sendMsgToWXWork() {
+      const send_url = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=8023261b-787a-4ae3-994c-cc8148dfd256";
+      const send_data = {
+        "msgtype": "markdown", // 消息类型，此时固定为markdown
+        "markdown": {
+          "content": 
+            `**<font color=\"info\">${pos}</font> 的小伙伴来访**\n**距离约 <font color=\"info\">${dist}</font> KM**\n**IP：<font color=\"info\">${ip}</font>**\n${posdesc}`,
+        }
+      };
+
+      fetch(send_url, {
+        method: 'POST',
+        mode: 'no-cors',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(send_data)
+      }).then(response => {
+        console.log('Response:', response);
+      }).catch(error => {
+        console.error('Error:', error);
+      });
+      hasExecuted = true;
     }
-    
-    if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-      module.exports = WXWork_SMS;
-    } else {
-      window.WXWork_SMS = WXWork_SMS;
-    }
-    
-    const sms = new WXWork_SMS();
-    // Markdown类型消息
-    sms.send_msg_markdown();
-    
-    
+    //
+
 
 }
 window.onload = showWelcome;
 
-
-
-
-
-
 // 如果使用了pjax在加上下面这行代码
 document.addEventListener('pjax:complete', showWelcome);
+
+
 
 
 /* 页脚计时器 start */
