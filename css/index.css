@@ -1264,7 +1264,7 @@ hr:before,
   }
 }
 :root {
-  --global-font-size: 16px;
+  --global-font-size: 15px;
   --global-bg: #fff;
   --font-color: #4c4948;
   --hr-border: #d2ebfd;
