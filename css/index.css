@@ -3318,7 +3318,7 @@ h1.page-title + .tag-cloud-list {
 }
 #page-header #scroll-down {
   position: absolute;
-  bottom: 10px;
+  bottom: 75px;
   width: 100%;
   cursor: pointer;
 }
