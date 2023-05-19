@@ -3232,6 +3232,11 @@ h1.page-title + .tag-cloud-list {
   color: var(--font-color);
   text-align: center;
 }
+@media screen and (max-width: 900px) {
+  #footer-wrap {
+    color: var(--light-grey);
+  }
+}
 #footer-wrap a {
   color: var(--light-grey);
 }
