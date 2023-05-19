@@ -8,7 +8,7 @@
       <link href="/posts/bilibili.html"/>
       <url>/posts/bilibili.html</url>
       
-        <content type="html"><![CDATA[<iframe src="//www.bilibili.com/blackboard/html5mobileplayer.html?aid=783374498&bvid=BV1B24y1T7iL&cid=1119578936&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>]]></content>
+        <content type="html"><![CDATA[<div align=center class="aspect-ratio">    <iframe src="//www.bilibili.com/blackboard/html5mobileplayer.html?aid=783374498&bvid=BV1B24y1T7iL&cid=1119578936&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></div>]]></content>
       
       
       <categories>
