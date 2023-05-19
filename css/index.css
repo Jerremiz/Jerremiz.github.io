@@ -3878,7 +3878,7 @@ h1.page-title + .tag-cloud-list {
   font-weight: 600;
   font-size: 1.8em;
   font-family: Monaco, 'Ubuntu Mono', monospace;
-  line-height: 1.2em;
+  line-height: 2em;
 }
 #article-container ol ol,
 #article-container ul ol,
