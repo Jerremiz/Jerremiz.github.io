@@ -129,6 +129,7 @@ button#go-up:hover #percent {
   border-radius: 20px;
 }
 
+/* 宽屏适配 */
 .layout{
   max-width:1400px;
 }
