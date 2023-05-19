@@ -1407,7 +1407,7 @@ table td {
   vertical-align: middle;
 }
 *::selection {
-  background: #00c4b6;
+  background: #4bcac2;
   color: #f7f7f7;
 }
 button {
@@ -2862,7 +2862,7 @@ h1.page-title + .tag-cloud-list {
   color: #6ec7ff;
 }
 #aside-content #card-toc .toc-content .toc-link.active {
-  background: #00c4b6;
+  background: #4bcac2;
   color: #fff;
 }
 #aside-content .sticky_layout:only-child > :first-child {
@@ -3844,7 +3844,7 @@ h1.page-title + .tag-cloud-list {
   overflow-wrap: break-word;
 }
 #article-container a {
-  color: #99a9bf;
+  color: #5ea6e5;
 }
 #article-container a:hover {
   text-decoration: underline;
