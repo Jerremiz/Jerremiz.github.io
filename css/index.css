@@ -3318,9 +3318,14 @@ h1.page-title + .tag-cloud-list {
 }
 #page-header #scroll-down {
   position: absolute;
-  bottom: 95px;
+  bottom: 80px;
   width: 100%;
   cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+  #page-header #scroll-down {
+    bottom: 100px;
+  }
 }
 #page-header #scroll-down .scroll-down-effects {
   position: relative;
