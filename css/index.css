@@ -3319,7 +3319,7 @@ h1.page-title + .tag-cloud-list {
 #page-header #scroll-down {
   position: absolute;
   bottom: 75px;
-  width: 95%;
+  width: 100%;
   cursor: pointer;
 }
 @media screen and (max-width: 900px) {
