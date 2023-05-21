@@ -171,14 +171,42 @@ width: 75% !important;
 
 /* 文章字号 */
 #article-container p {
-  font-size: 1.14rem;
-  line-height: 1.7;
+  font-size: 1.11rem;
+  line-height: 2.1;
   font-weight: 400;
 }
 
+#article-container.post-content h1, #article-container.post-content h2, #article-container.post-content h3, #article-container.post-content h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+#article-container.post-content h1 {
+  font-size: 1.84rem;
+  line-height: 1.6;
+}
+
+#article-container.post-content h2 {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  border-top: 1px dashed #f2b94b23;
+  padding-top: 1.5rem;
+}
+
+#article-container.post-content h3 {
+  font-size: 1.35rem;
+  line-height: 1.6;
+}
+
+#article-container.post-content h4 {
+  font-size: 1.23rem;
+  line-height: 1.6;
+}
 
 @media screen and (max-width: 768px) {
   #article-container p {
-    line-height: 1.5;
+    line-height: 1.85;
   }
 }
