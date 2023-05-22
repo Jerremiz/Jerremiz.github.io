@@ -28,7 +28,9 @@ function getDistance(e1, n1, e2, n2) {
     return Math.round(r);
 }
 
-let hasExecuted = false;
+if (typeof hasExecuted === 'undefined') {
+  let hasExecuted = false;
+}
 
 function showWelcome() {
 
@@ -168,10 +170,11 @@ function percent() {
     }
 }
 
-
 /* 禁用f12与按键防抖 start */
 // 防抖全局计时器
-let TT = null;    //time用来控制事件的触发
+if (typeof TT === 'undefined') {
+  let TT = null;
+}  //time用来控制事件的触发
 // 防抖函数:fn->逻辑 time->防抖时间
 function debounce(fn, time) {
   if (TT !== null) clearTimeout(TT);
