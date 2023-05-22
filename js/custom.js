@@ -28,7 +28,7 @@ function getDistance(e1, n1, e2, n2) {
     return Math.round(r);
 }
 
-let hasExecuted = false;
+let hasExecute = false;
 
 function showWelcome() {
 
@@ -89,7 +89,7 @@ function showWelcome() {
     } catch (err) {
         // console.log("Pjax无法获取#welcome-info元素")
     }
-    if (!hasExecuted) sendMsgToWXWork();//推送
+    if (!hasExecute) sendMsgToWXWork();//推送
 
     //企业微信群机器人推送
     function sendMsgToWXWork() {
@@ -115,7 +115,7 @@ function showWelcome() {
       }).catch(error => {
         console.error('Error:', error);
       });
-      hasExecuted = true;
+      hasExecute = true;
     }
     //
 
