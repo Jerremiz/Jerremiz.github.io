@@ -28,8 +28,6 @@ function getDistance(e1, n1, e2, n2) {
     return Math.round(r);
 }
 
-let hasExecute = false;
-
 function showWelcome() {
 
     let dist = getDistance(115.27179, 22.81234, ipLoacation.result.location.lng, ipLoacation.result.location.lat); //这里换成自己的经纬度
@@ -72,6 +70,7 @@ function showWelcome() {
     }
 
     //根据本地时间切换欢迎语
+    let HasExecuted = false;
     let timeChange;
     let date = new Date();
     if (date.getHours() >= 5 && date.getHours() < 11) timeChange = "<span>上午好</span>，一日之计在于晨！";
@@ -89,7 +88,7 @@ function showWelcome() {
     } catch (err) {
         // console.log("Pjax无法获取#welcome-info元素")
     }
-    if (!hasExecute) sendMsgToWXWork();//推送
+    if (!HasExecuted) sendMsgToWXWork();//推送
 
     //企业微信群机器人推送
     function sendMsgToWXWork() {
@@ -115,7 +114,7 @@ function showWelcome() {
       }).catch(error => {
         console.error('Error:', error);
       });
-      hasExecute = true;
+      HasExecuted = true;
     }
     //
 
