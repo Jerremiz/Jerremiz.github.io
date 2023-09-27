@@ -87,11 +87,11 @@ div#archive {
 
 /* 夜间模式下的阅读模式 */
 [data-theme="dark"] .read-mode #aside-content .card-widget {
-  background: rgba(25, 25, 25, 0.9) !important;
+  background: rgba(46, 48, 62, 0.9) !important;
   color: #ffffff;
 }
 [data-theme="dark"] .read-mode div#post {
-  background: rgba(25, 25, 25, 0.9) !important;
+  background: rgba(46, 48, 62, 0.9) !important;
   color: #ffffff;
 }
 
