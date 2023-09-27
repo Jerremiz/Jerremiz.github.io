@@ -167,3 +167,9 @@ width: 75% !important;
 /* <div align=center class="aspect-ratio">
 
 </div> */
+
+@media (min-width: 768px) {
+  .post-content {
+    font-size: 17px;
+  }
+}
