@@ -173,3 +173,33 @@ width: 75% !important;
     font-size: 17px;
   }
 }
+
+
+
+/* 超链接样式 参考heo */
+#article-container a:not(.fancybox, .imgbox, .swf, .box, .pimgbox, .magnet_link) {
+  text-decoration: none;
+  /* border-bottom: 2px solid var(--theme-color) */
+  /* border-radius: 4px 4px 0 0 */
+}
+
+#article-container a:not(.fancybox,
+  .imgbox,
+  .swf,
+  .box,
+  .pimgbox,
+  .magnet_link,
+  .gallery_link):hover {
+  text-decoration: none;
+  color: #fefefe;
+  background: rgba(57, 197, 187, 0.7) !important;
+  border-radius: 4px;
+  box-shadow: 0 8px 12px -3px #4259ef23;
+  padding: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+#article-container #hpp_talk p img {
+  display: inline;
+}
+
