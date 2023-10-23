@@ -22,6 +22,10 @@
   background: transparent !important;
 }
 
+/* 夜间模式标签背景颜色 */
+[data-theme="dark"] .content {
+  background: rgba(46, 48, 62, 1) !important;
+}
 
 :root {
   --trans-light: rgba(255, 255, 255, 0.95);
