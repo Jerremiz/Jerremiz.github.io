@@ -4366,7 +4366,7 @@ h1.page-title + .tag-cloud-list {
 }
 span.mathjax-overflow {
   display: inline-block;
-  padding: 0 2px;
+  padding: 0 1px;
   max-width: 100%;
   vertical-align: bottom;
 }
