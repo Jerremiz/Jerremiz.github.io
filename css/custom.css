@@ -231,3 +231,14 @@ details.folding-tag {
 #post .post-copyright {
   border-radius: 20px;
 }
+
+/* mathjax scrollbar */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+}
+.mathjax-overflow::-webkit-scrollbar {
+  height: 5px;
+}
+*::-webkit-scrollbar-track {
+  background-color: rgba(46, 48, 62, 0.88);
+}
