@@ -4382,14 +4382,14 @@ h1.page-title + .tag-cloud-list {
 }
 @media screen and (max-width: 800px) {
   #web_bg {
-    background: url(/assets/mobile2.webp) !important;
+    background: url(/assets/mobile1.webp) !important;
     background-attachment: fixed !important;
     background-position: fixed !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
   }
   [data-theme="dark"] #web_bg {
-    background: url(/assets/mobile3.webp) !important;
+    background: url(/assets/mobile2.webp) !important;
     background-attachment: fixed !important;
     background-position: fixed !important;
     background-size: cover !important;
@@ -5389,7 +5389,6 @@ blockquote.pullquote.right {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.7);
   content: '';
 }
 [data-theme='dark'] #article-container code {
