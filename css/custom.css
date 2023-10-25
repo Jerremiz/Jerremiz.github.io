@@ -239,6 +239,3 @@ details.folding-tag {
 .mathjax-overflow::-webkit-scrollbar {
   height: 5px;
 }
-*::-webkit-scrollbar-track {
-  background-color: rgba(46, 48, 62, 0.88);
-}
