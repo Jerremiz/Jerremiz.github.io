@@ -26,7 +26,6 @@
   --trans-light: rgba(255, 255, 255, 0.95);
   --trans-dark: rgba(46, 48, 62, 0.88);
   --border-style: 1px solid rgb(169, 169, 169);
-  /* --backdrop-filter: blur(5px) saturate(150%); */
 }
 
 
@@ -34,25 +33,35 @@
 /* 首页文章卡片 */
 #recent-posts > .recent-post-item {
   background: rgba(255, 255, 255, 0.88);
-  /* backdrop-filter: var(--backdrop-filter); */
   border-radius: 25px;
   border: var(--border-style);
 }
 
 /* 首页侧栏卡片 */
 #aside-content .card-widget {
-  background: var(--trans-light);
-  /* backdrop-filter: var(--backdrop-filter); */
+  background: rgba(255, 255, 255, 0.88);
   border-radius: 18px;
   border: var(--border-style);
 }
+
+/* 电脑端亚克力效果 */
+/* @media (min-width: 900px) {
+  #recent-posts>.recent-post-item {
+    backdrop-filter: blur(5px) saturate(150%);
+  }
+  #aside-content .card-widget {
+    backdrop-filter: blur(5px) saturate(150%);
+  }
+  #page-header.nav-fixed #nav {
+    backdrop-filter: blur(5px) saturate(150%);
+  }
+} */
 
 /* 文章页、归档页、普通页面 */
 div#post,
 div#page,
 div#archive {
   background: var(--trans-light);
-  /* backdrop-filter: var(--backdrop-filter); */
   border: var(--border-style);
   border-radius: 20px;
 }
@@ -60,7 +69,6 @@ div#archive {
 /* 导航栏 */
 #page-header.nav-fixed #nav {
   background: rgba(255, 255, 255, 0.4);
-  /* backdrop-filter: var(--backdrop-filter); */
 }
 
 [data-theme="dark"] #page-header.nav-fixed #nav {
@@ -129,15 +137,13 @@ button#go-up:hover #percent {
 }
 
 /* 宽屏适配 */
-.layout{
+.layout {
   max-width:1400px;
 }
-.aside-content{
+
+.aside-content {
   max-width: 312px;
   min-width: 300px;
-}
-.recent-posts{
-width: 75% !important;
 }
 
 @media screen and (max-width: 900px){
@@ -223,7 +229,7 @@ details.folding-tag {
   border-radius: 0 0 20px 20px !important;
 }
 
-[data-theme="dark"] .content {
+[data-theme="dark"] details.folding-tag[open]>div.content {
   background: rgba(46, 48, 62, 1) !important;
 }
 
@@ -238,4 +244,8 @@ details.folding-tag {
 }
 .mathjax-overflow::-webkit-scrollbar {
   height: 5px;
+}
+
+#page-header #scroll-down .scroll-down-effects {
+  color: var(--white);
 }
