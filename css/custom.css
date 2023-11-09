@@ -24,7 +24,7 @@
 
 :root {
   --trans-light: rgba(255, 255, 255, 0.95);
-  --trans-dark: rgba(46, 48, 62, 0.88);
+  --trans-dark: rgba(46, 48, 62, 0.95);
   --border-style: 1px solid rgb(169, 169, 169);
 }
 
@@ -77,7 +77,10 @@ div#archive {
 
 /* 夜间模式遮罩 */
 [data-theme="dark"] #recent-posts > .recent-post-item,
-[data-theme="dark"] #aside-content .card-widget,
+[data-theme="dark"] #aside-content .card-widget {
+  background: rgba(46, 48, 62, 0.88);
+}
+
 [data-theme="dark"] div#post,
 [data-theme="dark"] div#archive,
 [data-theme="dark"] div#page {
