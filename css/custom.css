@@ -45,17 +45,17 @@
 }
 
 /* 电脑端亚克力效果 */
-/* @media (min-width: 900px) {
-  #recent-posts>.recent-post-item {
+@media (min-width: 900px) {
+  /* #recent-posts>.recent-post-item {
     backdrop-filter: blur(5px) saturate(150%);
   }
   #aside-content .card-widget {
     backdrop-filter: blur(5px) saturate(150%);
-  }
+  } */
   #page-header.nav-fixed #nav {
     backdrop-filter: blur(5px) saturate(150%);
   }
-} */
+}
 
 /* 文章页、归档页、普通页面 */
 div#post,
@@ -248,4 +248,9 @@ details.folding-tag {
 
 #page-header #scroll-down .scroll-down-effects {
   color: var(--white);
+}
+
+/* 图片圆角 */
+#article-container img {
+  border-radius: 12px;
 }
