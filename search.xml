@@ -73,11 +73,11 @@
     
     
     <entry>
-      <title>memset与0x3f3f3f3f</title>
+      <title>Memset与0x3f3f3f3f</title>
       <link href="/posts/63.html"/>
       <url>/posts/63.html</url>
       
-        <content type="html"><![CDATA[<h2 id="0x3f3f3f3f"><a href="#0x3f3f3f3f" class="headerlink" title="0x3f3f3f3f"></a>0x3f3f3f3f</h2><p>在算法竞赛中，我们常常需要用到设置一个常量用来代表“无穷大”。</p><p>对于int类型的数，有人会采用INT_MAX，即 <code>0x7fffffff</code> （2^31-1）作为无穷大。</p><ul><li>int占用4字节，1字节（byte） = 8位（bit），共占用32位（比特），数据范围为-2147483648~2147483647（-2^31~2^31-1）<br>但是以INT_MAX为无穷大常常面临一个问题，即加一个其他的数会溢出。</li></ul><p>而这种情况在动态规划，或者其他一些递推的算法中常常出现，很有可能导致算法出问题。</p><p>所以在算法竞赛中，我们常采用 <code>0x3f3f3f3f</code> 来作为无穷大。</p><p><code>0x3f3f3f3f</code> 主要有如下好处：</p><ol><li><p><code>0x3f3f3f3f</code> 的十进制为1061109567，<code>0x7fffffff</code>的十进制为2147483647（2^31-1），和INT_MAX一个数量级，即10^9数量级，一般场合下的数据都是小于10^9的。</p></li><li><p><code>0x3f3f3f3f</code> * 2 = 2122219134（比2147483647小一点），无穷大相加依然不会溢出。</p></li></ol><h2 id="memset"><a href="#memset" class="headerlink" title="memset"></a>memset</h2><ol><li><p>原理<br> memset作用是在一段内存块中填充某个给定的值，它是对较大的结构体或数组进行清零操作的一种最快方法。memset以一个字节（8位）为单位赋值，一个int型占32位，即有4个字节循环，所以使用memset一般只用来初始化特定数字，如0、-1、0x3f，其他的（如1）建议使用循环初始化。</p></li><li><p>0x3f<br> <code>memset(a, 0x3f, sizeof(a));</code> 用于初始化数组a为正无穷，<code>0x3f</code>转化为二进制是 <code>1 1 1 1 1 1</code> （6位），补零到8位（一个字节）后是 <code>0 0 1 1 1 1 1 1</code> ，经过四次赋值变为一个int型，<br> 即 <code>0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1</code> ，即 <code>0x3f3f3f3f</code> ，以此将int数组的每个数赋值为无穷大。</p></li></ol><p>由上例可发现，memset只能用来置特殊的数：</p><ul><li>0 = <code>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</code> </li><li>-1 = <code>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</code><br>  （负数以补码形式储存，即其正数加符号位0，取反，+1）</li><li><code>0x3f3f3f3f</code> = <code>0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1</code> </li></ul><p>这些数即每四个字节都相同的数，其他的要使用循环来置数。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="0x3f3f3f3f"><a href="#0x3f3f3f3f" class="headerlink" title="0x3f3f3f3f"></a>0x3f3f3f3f</h2><p>在算法竞赛中，我们常常需要用到设置一个常量用来代表“无穷大”。</p><p>对于int类型的数，有人会采用INT_MAX，即 <code>0x7fffffff</code> （2^31-1）作为无穷大。</p><ul><li>int占用4字节，1字节（byte） = 8位（bit），共占用32位（比特），数据范围为-2147483648~2147483647（-2^31~2^31-1）<br>但是以INT_MAX为无穷大常常面临一个问题，即加一个其他的数会溢出。</li></ul><p>而这种情况在动态规划，或者其他一些递推的算法中常常出现，很有可能导致算法出问题。</p><p>所以在算法竞赛中，我们常采用 <code>0x3f3f3f3f</code> 来作为无穷大。</p><p><code>0x3f3f3f3f</code> 主要有如下好处：</p><ol><li><p><code>0x3f3f3f3f</code> 的十进制为1061109567，<code>0x7fffffff</code>的十进制为2147483647（2^31-1），和INT_MAX一个数量级，即10^9数量级，一般场合下的数据都是小于10^9的。</p></li><li><p><code>0x3f3f3f3f</code> * 2 = 2122219134（比2147483647小一点），无穷大相加依然不会溢出。</p></li></ol><h2 id="Memset"><a href="#Memset" class="headerlink" title="Memset"></a>Memset</h2><ol><li><p>原理<br> memset作用是在一段内存块中填充某个给定的值，它是对较大的结构体或数组进行清零操作的一种最快方法。memset以一个字节（8位）为单位赋值，一个int型占32位，即有4个字节循环，所以使用memset一般只用来初始化特定数字，如0、-1、0x3f，其他的（如1）建议使用循环初始化。</p></li><li><p>0x3f<br> <code>memset(a, 0x3f, sizeof(a));</code> 用于初始化数组a为正无穷，<code>0x3f</code>转化为二进制是 <code>1 1 1 1 1 1</code> （6位），补零到8位（一个字节）后是 <code>0 0 1 1 1 1 1 1</code> ，经过四次赋值变为一个int型，<br> 即 <code>0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1</code> ，即 <code>0x3f3f3f3f</code> ，以此将int数组的每个数赋值为无穷大。</p></li></ol><p>由上例可发现，memset只能用来置特殊的数：</p><ul><li>0 = <code>0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</code> </li><li>-1 = <code>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</code><br>  （负数以补码形式储存，即其正数加符号位0，取反，+1）</li><li><code>0x3f3f3f3f</code> = <code>0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1</code> </li></ul><p>这些数即每四个字节都相同的数，其他的要使用循环来置数。</p>]]></content>
       
       
       <categories>
@@ -194,7 +194,7 @@
     
     
     <entry>
-      <title>堆优化版dijkstra</title>
+      <title>堆优化版Dijkstra</title>
       <link href="/posts/dijkstra.html"/>
       <url>/posts/dijkstra.html</url>
       

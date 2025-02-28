@@ -209,7 +209,7 @@ document.onkeydown = function (e) {
         data: function () {
           this.$notify({
             title: "被发现啦😜",
-            message: "扒源记住要遵循GPL协议！",
+            // message: "扒源记住要遵循GPL协议！",
             position: 'top-right',
             offset: 50,
             showClose: true,
