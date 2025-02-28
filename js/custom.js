@@ -132,22 +132,22 @@ document.addEventListener('pjax:complete', showWelcome);
 
 
 /* 页脚计时器 start */
-var now = new Date();
-function createtime() {
-  // 当前时间
-  now.setTime(now.getTime() + 1000);
-  var start = new Date("08/01/2022 00:00:00"); // 旅行者1号开始计算的时间
-  var dis = Math.trunc(23400000000 + ((now - start) / 1000) * 17); // 距离=秒数*速度 记住转换毫秒
-  var unit = (dis / 149600000).toFixed(6);  // 天文单位
-  let currentTimeHtml = "";
-  (currentTimeHtml = `<div style="font-size:13px;font-weight:bold">旅行者 1 号当前距离地球 ${dis} 千米</div>`),
-    document.getElementById("workboard") &&
-    (document.getElementById("workboard").innerHTML = currentTimeHtml);
-}
-// 设置重复执行函数，周期1000ms
-setInterval(() => {
-  createtime();
-}, 1000);
+// var now = new Date();
+// function createtime() {
+//   // 当前时间
+//   now.setTime(now.getTime() + 1000);
+//   var start = new Date("08/01/2022 00:00:00"); // 旅行者1号开始计算的时间
+//   var dis = Math.trunc(23400000000 + ((now - start) / 1000) * 17); // 距离=秒数*速度 记住转换毫秒
+//   var unit = (dis / 149600000).toFixed(6);  // 天文单位
+//   let currentTimeHtml = "";
+//   (currentTimeHtml = `<div style="font-size:13px;font-weight:bold">旅行者 1 号当前距离地球 ${dis} 千米</div>`),
+//     document.getElementById("workboard") &&
+//     (document.getElementById("workboard").innerHTML = currentTimeHtml);
+// }
+// // 设置重复执行函数，周期1000ms
+// setInterval(() => {
+//   createtime();
+// }, 1000);
 
 /*页脚计时器 end */
 

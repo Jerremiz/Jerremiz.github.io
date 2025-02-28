@@ -23,8 +23,8 @@
 }
 
 :root {
-  --trans-light: rgba(255, 255, 255, 0.95);
-  --trans-dark: rgba(46, 48, 62, 0.95);
+  --trans-light: rgba(255, 255, 255, 0.98);
+  --trans-dark: rgba(46, 48, 62, 0.98);
   --border-style: 1px solid rgb(169, 169, 169);
 }
 
@@ -32,14 +32,14 @@
 
 /* 首页文章卡片 */
 #recent-posts > .recent-post-item {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.98);
   border-radius: 25px;
   border: var(--border-style);
 }
 
 /* 首页侧栏卡片 */
 #aside-content .card-widget {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.98);
   border-radius: 18px;
   border: var(--border-style);
 }
@@ -66,6 +66,22 @@ div#archive {
   border-radius: 20px;
 }
 
+/* 遮罩背景 */
+div#post::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: -1;
+}
+
+[data-theme="dark"] div#post::before {
+  background: rgba(46, 48, 62, 0.5);
+}
+
 /* 导航栏 */
 #page-header.nav-fixed #nav {
   background: rgba(255, 255, 255, 0.4);
@@ -78,7 +94,7 @@ div#archive {
 /* 夜间模式遮罩 */
 [data-theme="dark"] #recent-posts > .recent-post-item,
 [data-theme="dark"] #aside-content .card-widget {
-  background: rgba(46, 48, 62, 0.88);
+  background: rgba(46, 48, 62, 0.98);
 }
 
 [data-theme="dark"] div#post,
@@ -141,7 +157,7 @@ button#go-up:hover #percent {
 
 /* 宽屏适配 */
 .layout {
-  max-width:1400px;
+  max-width:1250px;
 }
 
 .aside-content {
