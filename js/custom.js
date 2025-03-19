@@ -94,33 +94,31 @@ function showWelcome() {
     if (!hasExecuted) sendMsgToWXWork();//推送
 
     //企业微信群机器人推送
-    function sendMsgToWXWork() {
-      const send_url = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=8023261b-787a-4ae3-994c-cc8148dfd256";
-      const send_data = {
-        "msgtype": "markdown", // 消息类型，此时固定为markdown
-        "markdown": {
-          "content": 
-            `**来自<font color=\"info\">${pos}</font>**\n**距离约 <font color=\"info\">${dist}</font> KM**\n**IP: <font color=\"info\">${ip}</font>**\n${posdesc}`,
-        }
-      };
+    // function sendMsgToWXWork() {
+    //   const send_url = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=8023261b-787a-4ae3-994c-cc8148dfd256";
+    //   const send_data = {
+    //     "msgtype": "markdown", // 消息类型，此时固定为markdown
+    //     "markdown": {
+    //       "content": 
+    //         `**来自<font color=\"info\">${pos}</font>**\n**距离约 <font color=\"info\">${dist}</font> KM**\n**IP: <font color=\"info\">${ip}</font>**\n${posdesc}`,
+    //     }
+    //   };
 
-      fetch(send_url, {
-        method: 'POST',
-        mode: 'no-cors',
-        cache: 'no-cache',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(send_data)
-      }).then(response => {
-        console.log('Response:', response);
-      }).catch(error => {
-        console.error('Error:', error);
-      });
-      hasExecuted = true;
-    }
-    //
-
+    //   fetch(send_url, {
+    //     method: 'POST',
+    //     mode: 'no-cors',
+    //     cache: 'no-cache',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(send_data)
+    //   }).then(response => {
+    //     console.log('Response:', response);
+    //   }).catch(error => {
+    //     console.error('Error:', error);
+    //   });
+    //   hasExecuted = true;
+    // }
 
 }
 window.onload = showWelcome;
