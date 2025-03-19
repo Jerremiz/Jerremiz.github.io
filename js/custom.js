@@ -91,7 +91,7 @@ function showWelcome() {
     } catch (err) {
         // console.log("Pjax无法获取#welcome-info元素")
     }
-    if (!hasExecuted) sendMsgToWXWork();//推送
+    // if (!hasExecuted) sendMsgToWXWork(); //推送
 
     //企业微信群机器人推送
     // function sendMsgToWXWork() {
