@@ -4022,6 +4022,7 @@ h1.page-title + .tag-cloud-list {
   width: calc(33.333% - 6px);
   height: 200px;
   background: #000;
+  border-radius: 25px;
   vertical-align: bottom;
 }
 @media screen and (max-width: 768px) {
